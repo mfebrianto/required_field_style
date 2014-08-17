@@ -5,7 +5,7 @@ require 'required_field_style/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "required_field_style"
-  spec.version       = RequiredFieldStyleSpec::VERSION
+  spec.version       = RequiredFieldStyle::VERSION
   spec.authors       = ["Michael Febrianto"]
   spec.email         = ["michaelfebrianto@gmail.com"]
   spec.summary       = %q{This gem will add asterisk after your required field label}
