@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["michaelfebrianto@gmail.com"]
   spec.summary       = %q{This gem will add asterisk after your required field label}
   spec.description   = %q{This gem will add asterisk after your required field label}
-  spec.homepage      = ""
+  spec.homepage      = "http://www.mfebrianto.com"
   spec.license       = ""
 
   spec.files         = `git ls-files -z`.split("\x0")
