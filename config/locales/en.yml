@@ -1,0 +1,29 @@
+en:
+  activerecord:
+    attributes:
+      ledger:
+        BatchTypeCode: Adjustment type
+      ticket:
+        IssueDate: Action Date
+        IssueTitle: Title
+        IssueClassCode: Category
+        UserAssigned: Assigned To
+        IssueSourceCode: Source
+        IssueText: Description
+        ReferenceValue: Reference Value
+      ticket_note:
+        IssueNoteTitle: Title
+        IssueNoteText: Description
+  time:
+    formats:
+      date: %d/%m/%Y
+      short_datetime: %d/%m/%Y
+      date_time: %d/%m/%Y %l:%M%p
+      descriptive_timestamp: at %l:%M%p on %b %d, %Y
+  date:
+    formats:
+      date: %d/%m/%Y
+      full_date: %A, %B %d, %Y
+      date_time: %d/%m/%Y %l:%M%p
+      descriptive_timestamp: at %l:%M%p on %b %d, %Y
+
