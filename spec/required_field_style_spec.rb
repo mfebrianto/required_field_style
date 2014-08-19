@@ -3,12 +3,36 @@ require 'spec_helper'
 module RequiredFieldStyle
 
   describe '/accounts/new.html.erb', :type => :view do
-    it 'should render mandatory style for required field' do
-      required_field = 'Account no'
-      mandatory_style = '<sup style=\"color:red\">&nbsp;*</sup>'
-      assigns[:account] = Account.new
-      render
-      response.body.to_s =~ /#{required_field}#{mandatory_style}/
+    context 'with configuration' do
+      before{
+        @configured_class = 'required_field_style'
+        RequiredFieldStyle.configure do |config|
+          config.css_class_name = @configured_class
+        end
+      }
+
+      it 'should set configured_class for required field' do
+        required_field = 'Account no'
+        assigns[:account] = Account.new
+        render
+        response.body.to_s.should =~ /class=\"#{@configured_class}\" for=\"account_account_no\">#{required_field}/
+      end
+    end
+
+    context 'no configuration' do
+      before{
+        RequiredFieldStyle.configure do |config|
+          config.css_class_name = ''
+        end
+      }
+
+      it 'should render red_asterisk for required field' do
+        required_field = 'Account no'
+        red_asterisk = '<sup style=\"color:red\">&nbsp;*'
+        assigns[:account] = Account.new
+        render
+        response.body.to_s.should =~ /#{required_field}#{red_asterisk}/
+      end
     end
   end
 

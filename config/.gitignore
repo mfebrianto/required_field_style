@@ -1,4 +1,3 @@
-database.yml
 mongrel
 monit
 nginx
